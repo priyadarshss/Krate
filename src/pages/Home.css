@@ -1,13 +1,12 @@
 .link {
   font-size: 18px;
-  margin:5%;
+  margin: 5%;
 }
 
 .link:hover {
-  color: #FF9900;
+  color: #ff9900;
   text-decoration: underline;
 }
-
 
 .carousel {
   position: absolute;
@@ -22,8 +21,8 @@
 }
 
 .card {
-  width: 350px;	
-  height: 430px;
+  width: 320px;
+  height: 390px;
 }
 
 .card-content {
@@ -32,7 +31,7 @@
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 80%;
 }
 
 .card-category {
@@ -40,12 +39,12 @@
 }
 
 .cards {
-  display: flex;	
-  justify-content: center;	
-  flex-wrap: wrap;	
-  position: absolute;	
-  top: 450px;	
-  width: 100%;	
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 500px;
+  width: 100%;
   gap: 19px;
 }
 
@@ -59,6 +58,6 @@
 }
 
 .category {
-  color: #FF9900;
+  color: #ff9900;
   font-weight: bold;
 }
