@@ -1,3 +1,64 @@
 .link {
-  margin: 20px;
+  font-size: 18px;
+  margin:5%;
+}
+
+.link:hover {
+  color: #FF9900;
+  text-decoration: underline;
+}
+
+
+.carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.carousel-img {
+  min-width: 100vw;
+  height: 750px;
+  object-fit: cover;
+}
+
+.card {
+  width: 350px;	
+  height: 430px;
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.card-category {
+  width: 50%;
+}
+
+.cards {
+  display: flex;	
+  justify-content: center;	
+  flex-wrap: wrap;	
+  position: absolute;	
+  top: 450px;	
+  width: 100%;	
+  gap: 19px;
+}
+
+.results-header {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0 10px #ddd;
+  font-size: 16px;
+  padding: 10px 25px;
+  font-weight: 500;
+}
+
+.category {
+  color: #FF9900;
+  font-weight: bold;
 }
