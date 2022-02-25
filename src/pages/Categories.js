@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Rating from '../components/Rating'
 import PriceRanges from '../components/PriceRanges'
+import Results from '../components/Results'
 
 const Categories = () => {
   const { Sider, Content } = Layout
@@ -22,7 +23,7 @@ const Categories = () => {
         </div>
 
         <Layout>
-          <Sider width='340px' theme='light' style={{ padding: '25px' }}>
+          <Sider width='320px' theme='light' style={{ padding: '25px' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}></div>
             <Rating rating={rating} setRating={setRating} />
             <PriceRanges
@@ -31,12 +32,30 @@ const Categories = () => {
               priceMax={priceMax}
               setPriceMax={setPriceMax}
             />
-            <Button className='login'>Apply Filters</Button>
+            <Button
+              className='login'
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '270px',
+              }}
+            >
+              Apply Filters
+            </Button>
           </Sider>
           <Content
             theme='light'
-            style={{ padding: '35px', backgroundColor: 'brown' }}
-          ></Content>
+            style={{ padding: '35px', backgroundColor: 'white' }}
+          >
+            RESULTS
+            <Results
+              category={category}
+              rating={rating}
+              priceMin={priceMin}
+              priceMax={priceMax}
+            />
+          </Content>
         </Layout>
       </div>
     </>

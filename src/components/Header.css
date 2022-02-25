@@ -1,5 +1,5 @@
 .site-page-header-ghost-wrapper {
-  padding: 1px;
+  padding: 0;
   background-color: #c4ac9a;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .logo {
-  height: 90px;
+  height: 80px;
   margin-right: 15px;
   border-radius: 50%;
 }

@@ -4,7 +4,7 @@
   background-color: #dccec6;
 }
 
-.ant-page-header-heading{
+.ant-page-header-heading {
   display: flex;
   justify-content: center;
   color: white;
@@ -13,41 +13,41 @@
 }
 
 .searchBar {
-  margin-top: 28px;
-  width: calc(100vw - 550px);
+  margin-top: 20px;
+  width: calc(100vw - 490px);
   border-radius: 10px;
 }
 
-.ant-input-search-button{
+.ant-input-search-button {
   background-color: #fdb13f;
   border-color: #fdb13f;
 }
 
-.ant-input-search-button:hover{
-  background-color: #FF9900;
-  border-color: #FF9900;
+.ant-input-search-button:hover {
+  background-color: #ff9900;
+  border-color: #ff9900;
   cursor: pointer;
 }
 
-.login{
+.login {
   padding: 3px 30px;
   height: 40px;
   font-weight: bold;
-  background-color: #fdb13f ;
+  background-color: #fdb13f;
   border-color: #fdb13f;
   border: solid 2px #fdb13f;
   color: black;
   border-radius: 10px;
 }
 
-.login:hover{
-  background-color: #FF9900;
+.login:hover {
+  background-color: #ff9900;
   border: solid 2px white;
   color: white;
 }
 
-.login:focus{
-  background-color: #FF9900;
+.login:focus {
+  background-color: #ff9900;
   border: solid 2px white;
   color: white;
 }
