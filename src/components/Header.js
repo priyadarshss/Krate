@@ -5,18 +5,22 @@ import Logo from '../images/logo.png'
 import { ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons'
 import Ind from '../images/ind.png'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const { Search } = Input
-const categories = [
-  'Grocery',
-  'Electronics',
-  'Fashion',
-  'Appliances',
-  'Beauty, Toys & More',
-]
+
 const Header = () => {
   const { authenticate } = useMoralis()
+  const [categories, setCategories] = useState()
 
+  useEffect(() => {
+    axios.get('https://fakestoreapi.com/products/categories').then(({data}) =>{
+      setCategories(data)
+      })
+    })
+  
+    
   return (
     <div className='site-page-header-ghost-wrapper'>
       <PageHeader
@@ -60,13 +64,15 @@ const Header = () => {
             <MenuOutlined />
             Categories
           </Space>
-          {categories.map((e) => {
+          {categories ? (
+            categories.map((e) => {
             return (
               <Link to='/categories' state={e} className='categories'>
                 {e}
               </Link>
             )
-          })}
+          })
+          ) : (null)}          
         </Space>
       </div>
     </div>

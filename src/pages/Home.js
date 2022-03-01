@@ -35,7 +35,7 @@ const Home = () => {
               className='card-content'
             ></img>
             <br />
-            <Link to='/categories' state={'Comics'} className='link'>
+            <Link to='/categories' state={'electronics'} className='link'>
               Shop Now
             </Link>
           </Card>
