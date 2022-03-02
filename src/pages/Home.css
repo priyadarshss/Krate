@@ -22,11 +22,10 @@
 }
 
 .card {
+  border-radius: 15px;
   width: 320px;
   height: 390px;
-  border-radius: 15px;
 }
-
 .card-content {
   display: flex;
   flex-wrap: wrap;

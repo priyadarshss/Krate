@@ -6,11 +6,14 @@ import Categories from './pages/Categories';
 import './App.css';
 
 const App = () => (
-  <Routes>
+  
+    <Routes>
     <Route path="/" element={<Home />} />
     <Route path="product" element={<Product />} />
     <Route path="categories" element={<Categories />} />
   </Routes>
+ 
+  
 );
 
 export default App;
