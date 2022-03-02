@@ -1,22 +1,29 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
+import axios from 'axios'
 import './Home.css'
 import { Carousel, Card } from 'antd'
 import Carousel1 from '../images/carousel1.png'
 import Carousel2 from '../images/carousel2.png'
 import Carousel3 from '../images/carousel3.png'
-import Comics from '../images/comics.png'
-import ArtemisFowl from '../images/ArtemisFowl.png'
-import MobyDick from '../images/MobyDick.png'
-import Adventure from '../images/adventure.png'
-import Dictionaries from '../images/dictionaries.png'
-import Fantasy from '../images/fantasy.png'
-import Horror from '../images/horror.png'
+import Electronics from '../images/electronics.png'
+import Jewellery from '../images/jewellery.png'
+import Men from '../images/men.png'
+import Women from '../images/women.png'
 
-const carousel = [Carousel1, Carousel2, Carousel3]
-const catCard = [Adventure, Fantasy, Horror, Dictionaries]
 const Home = () => {
+  const carousel = [Carousel1, Carousel2, Carousel3]
+  const [categories, setCategories] = useState()
+
+  useEffect(() => {
+    axios
+      .get('https://fakestoreapi.com/products/categories')
+      .then(({ data }) => {
+        console.log(data)
+        setCategories(data)
+      })
+  }, [])
   return (
     <>
       <div className='container'>
@@ -28,55 +35,57 @@ const Home = () => {
         </Carousel>
         <div className='cards'>
           <Card className='card'>
-            <h1>Browse Comics</h1>
+            <h1>Electronics</h1>
             <img
-              src={Comics}
-              alt='Comics Category'
+              src={Electronics}
+              alt='electronics'
               className='card-content'
+              style={{ width: '213px' }}
             ></img>
+
             <br />
             <Link to='/categories' state={'electronics'} className='link'>
               Shop Now
             </Link>
           </Card>
           <Card className='card'>
-            <h1>Artemis Fowl</h1>
+            <h1>Jewellery</h1>
             <img
-              src={ArtemisFowl}
-              alt='Artemis Fowl'
+              src={Jewellery}
+              alt='jewellery'
               className='card-content'
+              style={{ width: '248px' }}
             ></img>
             <br />
-            <Link to='/' className='link'>
+            <Link to='/categories' state={'jewelery'} className='link'>
               View Product
             </Link>
           </Card>
           <Card className='card'>
-            <h1>Moby Dick</h1>
-            <img src={MobyDick} alt='Moby Dick' className='card-content'></img>
+            <h1>Men's Clothing</h1>
+            <img
+              src={Men}
+              alt='men'
+              className='card-content'
+              style={{ width: '169px' }}
+            ></img>
             <br />
-            <Link to='/' className='link'>
+            <Link to='/categories' state={"men's clothing"} className='link'>
               View Product
             </Link>
           </Card>
           <Card className='card'>
-            <h1>Shop By Category</h1>
-            <div className='card-content'>
-              {catCard.map((e) => {
-                return (
-                  <img
-                    src={e}
-                    alt='category'
-                    className='card-category'
-                    onClick={() => console.log('beauty')}
-                  ></img>
-                )
-              })}
-              <br />
-              <Link to='/' className='link'>
-                Shop All
-              </Link>
-            </div>
+            <h1>Women's Clothing</h1>
+            <img
+              src={Women}
+              alt='women'
+              className='card-content'
+              style={{ width: '123px' }}
+            ></img>
+            <br />
+            <Link to='/categories' state={"women's clothing"} className='link'>
+              Shop now
+            </Link>
           </Card>
         </div>
       </div>
