@@ -11,7 +11,7 @@ import axios from 'axios'
 const { Search } = Input
 
 const Header = () => {
-  const { authenticate } = useMoralis()
+  const { authenticate, account } = useMoralis()
   const [categories, setCategories] = useState()
 
   useEffect(() => {
@@ -43,7 +43,11 @@ const Header = () => {
               type='primary'
               onClick={() => authenticate()}
             >
-              Login
+              {account ? (
+                <span>{account.slice(0, 5)}...</span>
+              ) : (
+                <span>Login</span>
+              )}
             </Button>
             <Space size={'large'}>
               <Badge count={0} showZero>
