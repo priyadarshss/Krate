@@ -9,14 +9,17 @@ import { MoralisProvider } from "react-moralis";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MoralisProvider appId="xxxxxxxx" serverUrl="xxxxxxxx">
+    <MoralisProvider
+      appId='IZPO22gbcab5tX61PdBJm1FFrIlGUFRHPqcKrXCl'
+      serverUrl='https://rw97txdwsez3.usemoralis.com:2053/server'
+    >
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </MoralisProvider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
