@@ -1,7 +1,6 @@
 import { Card, Rate, Spin } from 'antd'
 import { Link } from 'react-router-dom'
 import './Results.css'
-import { books } from '../books.js'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -11,6 +10,7 @@ function Results({ category, rating, priceMin, priceMax }) {
     axios
       .get(`https://fakestoreapi.com/products/category/${category}`)
       .then(({ data }) => {
+        console.log(data)
         setBookCategory(
           data
             .filter((x) => x.rating.rate >= rating)
@@ -26,14 +26,19 @@ function Results({ category, rating, priceMin, priceMax }) {
           return (
             <Card>
               <div style={{ display: 'flex' }}>
-                <img src={book.image} alt={i} width='300px'></img>
+                <img
+                  src={book.image}
+                  alt={i}
+                  width='200px'
+                  style={{ width: '270px', padding: '40px' }}
+                ></img>
                 <div>
                   <p className='title'>{book.title}</p>
                   <Rate value={book.rating.rate} disabled={false}></Rate>
                   <h2> ${book.price}</h2>
                   <p>Ships to Your Location</p>
                   <Link to='/product' state={book} className='login'>
-                    Got to Product Page
+                    Go to Product Page
                   </Link>
                 </div>
               </div>
@@ -41,7 +46,13 @@ function Results({ category, rating, priceMin, priceMax }) {
           )
         })
       ) : (
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Spin size='large' />
         </div>
       )}
