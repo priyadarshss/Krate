@@ -32,18 +32,24 @@ const Header = () => {
   const menu = (
     <Menu>
       <Menu.Item>
-        <a target='_blank' rel='noopener noreferrer' onClick={setUsername}>
+        <Button
+          style={{ width: '100%', borderRadius: '10px' }}
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={setUsername}
+        >
           Change Username
-        </a>
+        </Button>
       </Menu.Item>
       <Menu.Item>
-        <a
+        <Button
+          style={{ width: '100%', borderRadius: '10px' }}
           target='_blank'
           rel='noopener noreferrer'
           onClick={() => logout() && window.location.reload()}
         >
           Logout
-        </a>
+        </Button>
       </Menu.Item>
     </Menu>
   )
@@ -98,20 +104,24 @@ const Header = () => {
                 </span>
               </Badge>
               <Space className='header-buttons' size={'small'}>
-                <img src={Ind} alt='region' className='flag'></img>▾
+                <img src={Ind} alt='region' className='flag'></img>
               </Space>
             </Space>
 
             {/* <Avatar /> */}
 
             <Dropdown overlay={menu}>
-              <a
+              <Button
+                style={{
+                  backgroundColor: '#e2d2c6',
+                  padding: 0,
+                  border: 'none',
+                }}
                 className='ant-dropdown-link'
                 onClick={(e) => e.preventDefault()}
-                style={{ padding: '0' }}
               >
                 <DownOutlined />
-              </a>
+              </Button>
             </Dropdown>
           </>,
         ]}

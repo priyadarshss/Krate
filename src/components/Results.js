@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function Results({ category, rating, priceMin, priceMax }) {
-  const [bookCategory, setBookCategory] = useState()
+  const [productCategory, setProductCategory] = useState()
   useEffect(() => {
     axios
       .get(`https://fakestoreapi.com/products/category/${category}`)
       .then(({ data }) => {
         console.log(data)
-        setBookCategory(
+        setProductCategory(
           data
             .filter((x) => x.rating.rate >= rating)
             .filter((x) => x.price > priceMin)
@@ -21,23 +21,23 @@ function Results({ category, rating, priceMin, priceMax }) {
   }, [category, priceMin, priceMax, rating])
   return (
     <>
-      {bookCategory ? (
-        bookCategory.map((book, i) => {
+      {productCategory ? (
+        productCategory.map((product, i) => {
           return (
             <Card>
               <div style={{ display: 'flex' }}>
                 <img
-                  src={book.image}
+                  src={product.image}
                   alt={i}
                   width='200px'
                   style={{ width: '270px', padding: '40px' }}
                 ></img>
                 <div>
-                  <p className='title'>{book.title}</p>
-                  <Rate value={book.rating.rate} disabled={false}></Rate>
-                  <h2> ${book.price}</h2>
+                  <p className='title'>{product.title}</p>
+                  <Rate value={product.rating.rate} disabled={false}></Rate>
+                  <h2> ${product.price}</h2>
                   <p>Ships to Your Location</p>
-                  <Link to='/product' state={book} className='login'>
+                  <Link to='/product' state={product} className='login'>
                     Go to Product Page
                   </Link>
                 </div>

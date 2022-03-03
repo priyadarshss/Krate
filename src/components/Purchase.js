@@ -1,14 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Select, Modal, Input } from 'antd'
 import { ShoppingCartOutlined } from '@ant-design/icons'
+import { useMoralis } from 'react-moralis'
+import axios from 'axios'
 
-function Purchase({ book }) {
-  const { Option } = Select
+const { Option } = Select
+
+function Purchase({ product }) {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [delivery, setDelivery] = useState('')
+  const { Moralis, account, chainId } = useMoralis()
+  const [priceEth, setPriceEth] = useState()
+
+  useEffect(() => {
+    axios
+      .get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+      .then(({ data }) => {
+        setPriceEth(product.price / data.USD)
+      })
+  }, [])
+
+  const handleOk = async () => {
+    const options = {
+      type: 'native',
+      amount: Moralis.Units.ETH(priceEth),
+      receiver: '0x09EA01592ACDA28657e51097eBC10ec836Ee3D25',
+    }
+
+    await Moralis.enableWeb3()
+    let result = await Moralis.transfer(options)
+
+    const Transaction = Moralis.Object.extend('Transaction')
+    const transaction = new Transaction()
+
+    transaction.set('Customer', account)
+    transaction.set('Delivery', delivery.target.value)
+    transaction.set('Product', product.title)
+    transaction.save()
+    setIsModalVisible(false)
+  }
+
   return (
     <>
-      <span className='price'>${book.price}</span>
+      <span className='price'>${product.price}</span>
       <p> No Import fees & Free shipping included</p>
       <h1 style={{ color: 'green' }}> In Stock</h1>
       <h3>Quantity</h3>
@@ -29,19 +63,19 @@ function Purchase({ book }) {
       <Modal
         title='Purchase Product'
         visible={isModalVisible}
-        // onOk={handleOk}
+        onOk={handleOk}
         onCancel={() => setIsModalVisible(false)}
       >
         <div style={{ display: 'flex' }}>
           <img
-            src={book.image}
+            src={product.image}
             alt='product'
             style={{ width: '200px', padding: '22px' }}
           />
           <div>
-            <h3>{book.title}</h3>
+            <h3>{product.title}</h3>
             <h2>
-              Price: <span style={{ color: 'darkred' }}>${book.price}</span>
+              Price: <span style={{ color: 'darkred' }}>${product.price}</span>
             </h2>
             <h4>Delivery Address:</h4>
             <Input
