@@ -9,18 +9,20 @@ const PriceRanges = ({ priceMin, priceMax, setPriceMin, setPriceMax }) => {
   return (
     <>
       <h2>Price Range</h2>
-      <p className='prices' onClick={() => changePrice(0, 5)}>
-        Under $5
+      <div>
+      <p className='prices' onClick={() => changePrice(0, 100)}>
+        Under $100
       </p>
-      <p className='prices' onClick={() => changePrice(5, 10)}>
-        $5-$10
+      <p className='prices' onClick={() => changePrice(100, 200)}>
+        $100-$200
       </p>
-      <p className='prices' onClick={() => changePrice(10, 20)}>
-        $10-$20
+      <p className='prices' onClick={() => changePrice(200, 300)}>
+        $200-$300
       </p>
-      <p className='prices' onClick={() => changePrice(20, 100)}>
-        $20 & Above
+      <p className='prices' onClick={() => changePrice(300, 500)}>
+        $300 & Above
       </p>
+      </div>
       <Space>
         <InputNumber
           value={priceMin}
