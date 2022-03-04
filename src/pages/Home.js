@@ -5,6 +5,7 @@ import { Carousel, Card, Divider } from 'antd'
 import Carousel1 from '../images/carousel1.png'
 import Carousel2 from '../images/carousel2.png'
 import Carousel3 from '../images/carousel3.png'
+import Carousel4 from '../images/carousel4.png'
 import Electronics from '../images/electronics.png'
 import Jewellery from '../images/jewellery.png'
 import Men from '../images/men.png'
@@ -12,7 +13,7 @@ import Women from '../images/women.png'
 import Footer from '../components/Footer'
 
 const Home = () => {
-  const carousel = [Carousel1, Carousel2, Carousel3]
+  const carousel = [Carousel1, Carousel3,Carousel2, Carousel4 ]
   
   return (
     <>
