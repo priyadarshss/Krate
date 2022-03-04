@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Rate } from 'antd'
+import { Rate } from 'antd'
 import './Product.css'
 import { useLocation } from 'react-router'
 import Header from '../components/Header'

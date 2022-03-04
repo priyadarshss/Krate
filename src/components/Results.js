@@ -10,7 +10,6 @@ function Results({ category, rating, priceMin, priceMax }) {
     axios
       .get(`https://fakestoreapi.com/products/category/${category}`)
       .then(({ data }) => {
-        console.log(data)
         setProductCategory(
           data
             .filter((x) => x.rating.rate >= rating)

@@ -1,6 +1,6 @@
 .product-content {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 70px;
   gap: 80px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

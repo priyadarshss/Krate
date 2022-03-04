@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
-import axios from 'axios'
 import './Home.css'
-import { Carousel, Card } from 'antd'
+import { Carousel, Card, Divider } from 'antd'
 import Carousel1 from '../images/carousel1.png'
 import Carousel2 from '../images/carousel2.png'
 import Carousel3 from '../images/carousel3.png'
@@ -14,16 +12,7 @@ import Women from '../images/women.png'
 
 const Home = () => {
   const carousel = [Carousel1, Carousel2, Carousel3]
-  const [categories, setCategories] = useState()
-
-  useEffect(() => {
-    axios
-      .get('https://fakestoreapi.com/products/categories')
-      .then(({ data }) => {
-        console.log(data)
-        setCategories(data)
-      })
-  }, [])
+  
   return (
     <>
       <div className='container'>
@@ -36,6 +25,7 @@ const Home = () => {
         <div className='cards'>
           <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Electronics</h1>
+            <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
             <img
               src={Electronics}
               alt='electronics'
@@ -50,6 +40,8 @@ const Home = () => {
           </Card>
           <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Jewellery</h1>
+            <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
+
             <img
               src={Jewellery}
               alt='jewellery'
@@ -63,6 +55,8 @@ const Home = () => {
           </Card>
           <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Men's Clothing</h1>
+            <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
+
             <img
               src={Men}
               alt='men'
@@ -77,6 +71,8 @@ const Home = () => {
 
           <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Women's Clothing</h1>
+            <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
+
             <img
               src={Women}
               alt='women'

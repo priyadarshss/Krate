@@ -9,7 +9,7 @@ const { Option } = Select
 function Purchase({ product }) {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [delivery, setDelivery] = useState('')
-  const { Moralis, account, chainId } = useMoralis()
+  const { Moralis, account } = useMoralis()
   const [priceEth, setPriceEth] = useState()
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Purchase({ product }) {
       .then(({ data }) => {
         setPriceEth(product.price / data.USD)
       })
-  }, [])
+  }, [product.price])
 
   const handleOk = async () => {
     const options = {
@@ -28,6 +28,7 @@ function Purchase({ product }) {
     }
 
     await Moralis.enableWeb3()
+    //eslint-disable-next-line
     let result = await Moralis.transfer(options)
 
     const Transaction = Moralis.Object.extend('Transaction')
