@@ -126,18 +126,32 @@ const Header = () => {
           </>,
         ]}
       ></PageHeader>
-      <div className='site-page-subheader-ghost-wrapper'>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        className='site-page-subheader-ghost-wrapper'
+      >
         <Space size={'middle'}>
           <Space size={'small'} style={{ fontWeight: 'bold' }}>
             <MenuOutlined />
-            Categories
+            CATEGORIES
           </Space>
           {categories
             ? categories.map((e) => {
                 return (
-                  <Link to='/categories' state={e} className='categories'>
-                    {e}
-                  </Link>
+                  <Space
+                    style={{
+                      marginRight: '30px',
+                      marginLeft: '30px',
+                    }}
+                  >
+                    <Link to='/categories' state={e} className='categories'>
+                      {e.toUpperCase()}
+                    </Link>
+                  </Space>
                 )
               })
             : null}

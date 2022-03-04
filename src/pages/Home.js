@@ -34,57 +34,58 @@ const Home = () => {
           })}
         </Carousel>
         <div className='cards'>
-          <Card className='card'>
+          <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Electronics</h1>
             <img
               src={Electronics}
               alt='electronics'
               className='card-content'
-              style={{ width: '213px' }}
+              style={{ width: '213px', borderRadius: '20px' }}
             ></img>
 
             <br />
             <Link to='/categories' state={'electronics'} className='link'>
-              Shop Now
+              <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
-          <Card className='card'>
+          <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Jewellery</h1>
             <img
               src={Jewellery}
               alt='jewellery'
               className='card-content'
-              style={{ width: '248px' }}
+              style={{ width: '248px', borderRadius: '20px' }}
             ></img>
             <br />
             <Link to='/categories' state={'jewelery'} className='link'>
-              View Product
+              <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
-          <Card className='card'>
+          <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Men's Clothing</h1>
             <img
               src={Men}
               alt='men'
               className='card-content'
-              style={{ width: '169px' }}
+              style={{ width: '169px', borderRadius: '20px' }}
             ></img>
             <br />
             <Link to='/categories' state={"men's clothing"} className='link'>
-              View Product
+              <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
-          <Card className='card'>
+
+          <Card style={{ borderRadius: '20px' }} className='card'>
             <h1>Women's Clothing</h1>
             <img
               src={Women}
               alt='women'
               className='card-content'
-              style={{ width: '123px' }}
+              style={{ width: '123px', borderRadius: '20px' }}
             ></img>
             <br />
             <Link to='/categories' state={"women's clothing"} className='link'>
-              Shop now
+              <button class='button-55'>Shop Now</button>
             </Link>
           </Card>
         </div>
