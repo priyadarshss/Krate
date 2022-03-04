@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Rating from '../components/Rating'
 import PriceRanges from '../components/PriceRanges'
 import Results from '../components/Results'
+import Footer from '../components/Footer'
 
 const { Sider, Content } = Layout
 
@@ -50,6 +51,7 @@ const Categories = () => {
             />
           </Content>
         </Layout>
+        <Footer/>
       </div>
     </>
   )

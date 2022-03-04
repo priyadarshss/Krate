@@ -4,6 +4,7 @@ import './Product.css'
 import { useLocation } from 'react-router'
 import Header from '../components/Header'
 import Purchase from '../components/Purchase'
+import Footer from '../components/Footer'
 
 const Product = () => {
   let { state: product } = useLocation()
@@ -37,6 +38,7 @@ const Product = () => {
             <Purchase product={product} />
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   )

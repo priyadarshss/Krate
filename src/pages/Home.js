@@ -9,6 +9,7 @@ import Electronics from '../images/electronics.png'
 import Jewellery from '../images/jewellery.png'
 import Men from '../images/men.png'
 import Women from '../images/women.png'
+import Footer from '../components/Footer'
 
 const Home = () => {
   const carousel = [Carousel1, Carousel2, Carousel3]
@@ -85,6 +86,7 @@ const Home = () => {
             </Link>
           </Card>
         </div>
+        <Footer/>
       </div>
     </>
   )
