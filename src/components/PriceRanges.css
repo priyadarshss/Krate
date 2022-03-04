@@ -1,6 +1,8 @@
 .prices {
   font-size: 16px;
   font-weight: 500;
+  padding-left: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .prices:hover {

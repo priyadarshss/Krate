@@ -13,7 +13,7 @@ const Categories = () => {
   const { state: category } = useLocation()
   const [rating, setRating] = useState(1)
   const [priceMin, setPriceMin] = useState(0)
-  const [priceMax, setPriceMax] = useState(200)
+  const [priceMax, setPriceMax] = useState(500)
 
   return (
     <>
