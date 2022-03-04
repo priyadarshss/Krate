@@ -15,8 +15,7 @@ import axios from 'axios'
 const { Search } = Input
 
 const Header = () => {
-  const { authenticate, isAuthenticated, user, logout, setUserData } =
-    useMoralis()
+  const { authenticate, isAuthenticated, user, logout, setUserData } = useMoralis()
   const [categories, setCategories] = useState()
 
   const setUsername = () => {
@@ -104,11 +103,14 @@ const Header = () => {
                 </span>
               </Badge>
               <Space className='header-buttons' size={'small'}>
-                <img src={Ind} alt='region' className='flag'></img>
+              {user ?(
+                <img
+                  width='80px'
+                  src={`https://avatars.dicebear.com/api/adventurer/${user.getUsername()}.svg`}
+                  alt=''
+                />) : (null)}
               </Space>
             </Space>
-
-            {/* <Avatar /> */}
 
             <Dropdown overlay={menu}>
               <Button
