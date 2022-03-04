@@ -1,11 +1,8 @@
 import { PageHeader, Button, Input, Space, Badge, Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
-
 import { useMoralis } from 'react-moralis'
 import './Header.css'
 import Logo from '../images/logo.png'
-import Ind from '../images/ind.png'
-
 import { ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
