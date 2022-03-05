@@ -1,1 +1,2 @@
-# Krate (Amazon Clone)
+# Krate
+## A Web3 E-commerce website.
