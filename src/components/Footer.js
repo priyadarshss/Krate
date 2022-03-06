@@ -21,28 +21,28 @@ const Footer = () => {
           <div className="footer-link-wrapper">
             <div className="footer-link-items">
               <h2>About Us</h2>
-              <Link to="/">How it works</Link>
-              <Link to="/">Testimonials</Link>
-              <Link to="/">Investors</Link>
-              <Link to="/">Terms of Service</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>How it works</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Testimonials</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Investors</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Terms of Service</Link>
             </div>
           </div>
           <div className="footer-link-wrapper">
             <div className="footer-link-items">
               <h2>Videos</h2>
-              <Link to="/">Submit Video</Link>
-              <Link to="/">Ambassadors</Link>
-              <Link to="/">Agency</Link>
-              <Link to="/">Influencer</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Submit Video</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Ambassadors</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Agency</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Influencer</Link>
             </div>
           </div>
           <div className="footer-link-wrapper">
             <div className="footer-link-items">
               <h2>Social Media</h2>
-              <Link to="/">Instagram</Link>
-              <Link to="/">Facebook</Link>
-              <Link to="/">Youtube</Link>
-              <Link to="/">Twitter</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Instagram</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Facebook</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Youtube</Link>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Twitter</Link>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="footer-logo">
               <h1 className="title" style={{ fontSize: "40px" }}>
                 K R{" "}
-                <Link to="/">
+                <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                   <img
                     className="logo"
                     src={A}

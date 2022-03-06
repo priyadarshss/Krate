@@ -70,7 +70,7 @@ const Header = () => {
         extra={[
           <>
             <Link to='/'>
-              <img className='logo' src={Logo} alt='Logo' />
+              <img className='logo' src={Logo} alt='Logo' onClick={() => window.scrollTo(0, 0)} />
             </Link>
             <Search
               className='searchBar'
@@ -147,7 +147,7 @@ const Header = () => {
                       marginLeft: '30px',
                     }}
                   >
-                    <Link to='/categories' state={e} className='categories'>
+                    <Link to='/categories' state={e} className='categories' onClick={() => window.scrollTo(0, 0)}>
                       {e.toUpperCase()}
                     </Link>
                   </Space>

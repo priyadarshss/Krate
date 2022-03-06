@@ -38,7 +38,7 @@ const Home = () => {
             ></img>
 
             <br />
-            <Link to='/categories' state={'electronics'} className='link'>
+            <Link to='/categories' state={'electronics'} className='link' onClick={() => window.scrollTo(0, 0)}>
               <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
@@ -55,7 +55,7 @@ const Home = () => {
               style={{ width: '248px', borderRadius: '20px' }}
             ></img>
             <br />
-            <Link to='/categories' state={'jewelery'} className='link'>
+            <Link to='/categories' state={'jewelery'} className='link' onClick={() => window.scrollTo(0, 0)}>
               <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
@@ -72,7 +72,7 @@ const Home = () => {
               style={{ width: '169px', borderRadius: '20px' }}
             ></img>
             <br />
-            <Link to='/categories' state={"men's clothing"} className='link'>
+            <Link to='/categories' state={"men's clothing"} className='link' onClick={() => window.scrollTo(0, 0)}>
               <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
@@ -90,7 +90,7 @@ const Home = () => {
               style={{ width: '123px', borderRadius: '20px' }}
             ></img>
             <br />
-            <Link to='/categories' state={"women's clothing"} className='link'>
+            <Link to='/categories' state={"women's clothing"} className='link' onClick={() => window.scrollTo(0, 0)}>
               <button class='button-55'>Shop Now</button>
             </Link>
           </Card>
