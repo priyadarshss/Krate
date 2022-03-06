@@ -3,11 +3,14 @@ import { Button, Select, Modal, Input } from 'antd'
 import { ShoppingCartOutlined } from '@ant-design/icons'
 import { useMoralis } from 'react-moralis'
 import axios from 'axios'
+import './Purchase.css'
+import { Link } from 'react-router-dom'
 
 const { Option } = Select
 
 function Purchase({ product }) {
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [successModal, setSuccessModal] = useState(false)
   const [delivery, setDelivery] = useState('')
   const { Moralis, account } = useMoralis()
   const [priceEth, setPriceEth] = useState()
@@ -39,6 +42,7 @@ function Purchase({ product }) {
     transaction.set('Product', product.title)
     transaction.save()
     setIsModalVisible(false)
+    setSuccessModal(true)
   }
 
   return (
@@ -86,6 +90,41 @@ function Purchase({ product }) {
             ></Input>
           </div>
         </div>
+      </Modal>
+      <Modal
+        title='Payment Successful'
+        visible={successModal}
+        footer={null}
+        onCancel={() => setSuccessModal(false)}
+      >
+        <>
+          <div className='modal fade' id='myModal' role='dialog'>
+            <div className='modal-dialog'>
+              <div className='card'>
+                <div className='card-img'>
+                  <img
+                    className='img-fluid'
+                    width='100%'
+                    src='https://i.imgur.com/4niebFr.jpg'
+                    alt=''
+                  />{' '}
+                </div>
+                <div className='card-title'>
+                  <p>Success!</p>
+                </div>
+                <div className='card-text'>
+                  <p>
+                    Your Payment was Successful! <br />
+                    And will arrive soon.
+                  </p>
+                </div>{' '}
+                <Link to='/'>
+                  <button className='btn'>Continue Shopping</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
       </Modal>
     </>
   )

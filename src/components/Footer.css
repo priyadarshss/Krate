@@ -47,8 +47,8 @@
   }
   
   .footer-link-items a:hover {
-    color: #e9e9e9;
-    transition: 1s ease-out;
+    color: #f25d35;
+    transition: 0.5s ease-out;
   }
   
   .footer-email-form h2 {
