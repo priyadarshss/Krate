@@ -21,10 +21,6 @@
   object-fit: cover;
 }
 
-.card {
-  width: 320px;
-  height: 410px;
-}
 .card-content {
   display: flex;
   flex-wrap: wrap;
@@ -42,7 +38,7 @@
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
-  top: 490px;
+  top: 590px;
   width: 100%;
   gap: 19px;
 }

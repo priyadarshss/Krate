@@ -25,7 +25,9 @@ const Home = () => {
           })}
         </Carousel>
         <div className='cards'>
-          <Card style={{ borderRadius: '20px' }} className='card'>
+          <Card
+            style={{ borderRadius: '20px', width: '320px', height: '410px' }}
+          >
             <h1>Electronics</h1>
             <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
             <img
@@ -40,7 +42,9 @@ const Home = () => {
               <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
-          <Card style={{ borderRadius: '20px' }} className='card'>
+          <Card
+            style={{ borderRadius: '20px', width: '320px', height: '410px' }}
+          >
             <h1>Jewellery</h1>
             <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
 
@@ -55,7 +59,9 @@ const Home = () => {
               <button class='button-55'>Shop Now</button>{' '}
             </Link>
           </Card>
-          <Card style={{ borderRadius: '20px' }} className='card'>
+          <Card
+            style={{ borderRadius: '20px', width: '320px', height: '410px' }}
+          >
             <h1>Men's Clothing</h1>
             <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
 
@@ -71,7 +77,9 @@ const Home = () => {
             </Link>
           </Card>
 
-          <Card style={{ borderRadius: '20px' }} className='card'>
+          <Card
+            style={{ borderRadius: '20px', width: '320px', height: '410px' }}
+          >
             <h1>Women's Clothing</h1>
             <Divider style={{ marginTop: '-10px', marginBottom: '10px' }} />
 
@@ -87,7 +95,8 @@ const Home = () => {
             </Link>
           </Card>
         </div>
-        <Footer/>
+        <div style={{ height: '100px', backgroundColor: '#e9e9e9' }}></div>
+        <Footer />
       </div>
     </>
   )
