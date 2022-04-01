@@ -9,3 +9,8 @@
 ~Used Ant Design as the UI library.
 
 ~Hosted using AWS Amplify - https://main-b.d3f0uwwfr5gqzp.amplifyapp.com/
+
+## Requirements:
+Metamask account to run the functions.
+Download from: 
+https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
