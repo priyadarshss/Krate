@@ -8,7 +8,7 @@
 
 ~Used Ant Design as the UI library.
 
-~Hosted using AWS Amplify - https://main-b.d3f0uwwfr5gqzp.amplifyapp.com/
+~Hosted using AWS Amplify - https://main-b.d27agvf5k5gz8w.amplifyapp.com/
 
 ## Requirements:
 Metamask account to run the functions.
